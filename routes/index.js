@@ -1,4 +1,5 @@
 const express = require('skills');
+const { get } = require('./skill');
 const router = skill.Router();
 
 /* GET home page. */
@@ -7,3 +8,4 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+//go
