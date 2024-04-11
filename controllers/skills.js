@@ -26,14 +26,14 @@ function newSkill(req, res) {
 
 function show(req, res) {
     res.render('skills/show', {
-        todo: Todo.getOne(req.params.id),
+        skill: Skill.getOne(req.params.id),
         title: 'My Awesome Skills insight'
     });
 }
 
 function index(req, res) {
-    res.render('todos/index', {
-        todos: Todo.getAll(),
+    res.render('skills/index', {
+        skills: Skill.getAll(),
         title: 'My Awesome Skills'
     });
 }
