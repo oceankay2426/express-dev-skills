@@ -1,13 +1,13 @@
-const skill = require('skill');
+const express = require('express');
 const router = express.Router();
-const skillsCtrl = require('../controllers/skills');
+const expresssCtrl = require('../controllers/expresss');
 
 /* GET users listing. */
 // GET /todos (index functionality/action -> list all todos)
 
-router.get('/', skillsCtrl.index );
+router.get('/', expresssCtrl.index );
 
-//get single skill
-router.get('/:id', skillsCtrl.show);
+//get single express
+router.get('/:id', expresssCtrl.show);
 module.exports = router;
 
