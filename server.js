@@ -2,9 +2,10 @@ const createError = require('http-errors');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
-//const expressRouter = require('./routes/express');
+const expressRouter = require('./routes/express');
 const express = require('express');
 
 const app = express();
@@ -13,11 +14,18 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+console.log('My skills');
+res.locals.time = new Date().toLocaleTimeString
+next();
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/expresss', express.Router);

@@ -1,13 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const expresssCtrl = require('../controllers/expresss');
+const skillsCtrl = require('../controllers/skills');
 
 /* GET users listing. */
-// GET /todos (index functionality/action -> list all todos)
 
-router.get('/', expresssCtrl.index );
+router.get('/', skillsCtrl.index);
 
-//get single express
-router.get('/:id', expresssCtrl.show);
+router.get('/new', skillsCtrl.new);
+
+router.get('/:id', skillsCtrl.show);
+
+router.post('/', skillsCtrl.create);
+
+router.delete('/:tuna', skillsCtrl.delete);
+
+
 module.exports = router;
 

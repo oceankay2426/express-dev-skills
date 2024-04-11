@@ -1,19 +1,39 @@
-const express= require('../models/express');
+const Skill = require('../models/skill');
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill,
+    create,
+    delete: deleteSkill
 };
-function show(req, res) {
-    res.render('express/show', {
-        express: express.getOne(req.params.id)
-    });
 
+function deleteSkill(req, res) {
+    Skill.deleteOne(req.params.tuna);
+    res.redirect('/skills');
 }
 
+function create(req, res) {
+    console.log(req.body);
+    // Models are responible for CRUD'ing the data
+    Todo.create(req.body);
+    // Always do a redirect when data has been changed
+    res.redirect('/skills');
+}
+
+function newSkill(req, res) {
+    res.render('skills/new', { title: 'Your Skill' });
+}
+
+function show(req, res) {
+    res.render('skills/show', {
+        todo: Todo.getOne(req.params.id),
+        title: 'My Awesome Skills insight'
+    });
+}
 
 function index(req, res) {
-    //dont use leading slash when rendering!
-    res.render('express/index', {
-        expresss: express.getAll()
+    res.render('todos/index', {
+        todos: Todo.getAll(),
+        title: 'My Awesome Skills'
     });
 }
