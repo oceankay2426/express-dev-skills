@@ -1,4 +1,4 @@
-const express = require('express');
+const skill = require('skill');
 const router = express.Router();
 const skillsCtrl = require('../controllers/skills');
 

@@ -1,11 +1,8 @@
-const express = require('skills');
-const { get } = require('./skill');
-const router = skill.Router();
+const router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Skills' });
+  res.render('index', { title: 'all my skills' });
 });
 
 module.exports = router;
-//go

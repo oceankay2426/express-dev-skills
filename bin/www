@@ -5,11 +5,11 @@
  */
 
 const app = require('../server');
-const debug = require('debug')('express-dev-skills:server');
+const debug = require('debug')('skill-dev-skills:server');
 const http = require('http');
 
 /**
- * Get port from environment and store in Express.
+ * Get port from environment and store in skill.
  */
 
 const port = normalizePort(process.env.PORT || '3000');

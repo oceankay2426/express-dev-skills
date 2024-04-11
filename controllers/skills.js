@@ -1,4 +1,4 @@
-const skill= require('../models/skills');
+const skill= require('../models/skill');
 module.exports = {
     index,
     show
@@ -14,6 +14,6 @@ function show(req, res) {
 function index(req, res) {
     //dont use leading slash when rendering!
     res.render('skill/index', {
-        skill: skill.getAll()
+        skills: skill.getAll()
     });
 }
