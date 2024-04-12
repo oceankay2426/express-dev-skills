@@ -27,7 +27,7 @@ function newSkill(req, res) {
 function show(req, res) {
     res.render('skills/show', {
         skill: Skill.getOne(req.params.id),
-        title: 'My Awesome Skills insight'
+        title: 'My Awesome Skills Insight'
     });
 }
 
